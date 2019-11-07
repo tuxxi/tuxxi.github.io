@@ -6,6 +6,19 @@ html {
   font-size: 137.5%;
   -webkit-font-smoothing: antialiased;
 }
+body {
+  margin-bottom: 3.0rem;
+}
+footer {
+  margin: 0 auto;
+  width: 640px;
+
+  margin-top: 1.0rem;
+  margin-bottom: 1.0rem;
+  line-height: 1.5rem;
+  font-size: 0.707rem;
+   
+}
 /* Copy & Lists */
 p {
   line-height: 1.5rem;
@@ -104,7 +117,7 @@ code {
   margin-top: 0;
 }
 main {
-  width: 590px;
+  width: 640px;
   margin: 0 auto;
 }
 
