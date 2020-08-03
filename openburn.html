@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>My work on OpenBurn</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- I am not a web developer, and I don't wish to become one! -->
+    <main><h4><a href=https://sojourner.me>Back Home...</a></h4></main>
+</head>
+
+<body>
+    <main>
+        <h2>My work on OpenBurn</h2>
+        <p>
+            At the time, the only other major project I had worked on was <a href=https://sojourner.me/momentum.html>Momentum Mod</a>,
+            so I chose to write OpenBurn in C++, utilizing the Qt framework. This could be interpreted as either
+            a very wise choice or a very poor one.
+        </p>
+        <br>
+        <p>
+            The Qt framework is exceptional, with best-in-class documentation for almost everything it can do. It is extremely
+            powerful and allows for quite easy cross-platform GUI applications that look native. However,
+            the choice to write the application in C++ ended up biting me as the application grew in scope.
+            It became increasingly difficult to effectively refactor my ad-hoc codebase.
+            I remember spending a long time beating my head against a memory leak caused by 
+            passing around shared pointers with move constructors, trying to change the ownership of an object.
+        </p>
+        <br>
+        <p>
+            A lot of this friction was caused by the fact that the design and architecture of OpenBurn was not very well thought-out.
+            I just dove in headfirst without really knowing what I was doing in any way!
+            I learned about many common design matterns (like the MVC architecture used by Qt) as I was going, which meant that
+            refactoring got harder and harder as I added more features without realizing what a mess I was making.
+        </p>
+        <br>
+        <p>
+            However, my suffering paid off, and I released verion 0.1a of OpenBurn in late 2017. The "MVP" release allowed for 
+            simulation of the solid-state burn phase of a solid rocket motor with arbitrary propellants. I was proud of the
+            graphics I had created to animate the simulated motor "burning", and even added features commonly requested by users
+            of BurnSim, such as calculating the mass flux (the amount of mass flow per unit area) at any point in the thrust chamber.
+        </p>
+        <br>
+        <img src="https://camo.githubusercontent.com/0c8a3d04c40cecde4a1cb33504325a0c36a9af7d/68747470733a2f2f692e696d6775722e636f6d2f393632535052412e706e67"
+        alt="OpenBurn simulation screenshot">
+        <br>
+        <p>
+            I began work on adding new features requested by the friends I shared with, such as more grain types. However, at this point,
+            the bad architecture began to really catch up with me. It was monumentually difficult to add new grain types as it required
+            overloading classes for drawing the grain and simulating the grain. I was also having a hard time finding closed-form simulation
+            equations for common propellant grain types such as a fin-o-cyl. At this point I even went as far as reverse engineering BurnSim to
+            understand the algorithms Greg had used to simulate complex grain shapes.
+        </p>
+    </main>
+</body>
+</html>

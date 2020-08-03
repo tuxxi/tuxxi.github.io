@@ -11,7 +11,7 @@ body {
 }
 footer {
   margin: 0 auto;
-  width: 640px;
+  width: 720px;
 
   margin-top: 1.0rem;
   margin-bottom: 1.0rem;
@@ -117,8 +117,13 @@ code {
   margin-top: 0;
 }
 main {
-  width: 640px;
+  width: 720px;
   margin: 0 auto;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
 }
 
 blockquote {
