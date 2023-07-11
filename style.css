@@ -17,7 +17,6 @@ footer {
   margin-bottom: 1.0rem;
   line-height: 1.5rem;
   font-size: 0.707rem;
-   
 }
 /* Copy & Lists */
 p {
@@ -163,5 +162,10 @@ a:focus {
   main {
     width: 100%;
   }
+}
+
+/* Add a small amount of padding to font-awesome icons */
+.fa {
+    padding-right: 0.4em;
 }
 
