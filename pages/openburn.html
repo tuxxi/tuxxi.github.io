@@ -1,0 +1,103 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>My work on OpenBurn</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css" />
+    <link rel="stylesheet" href="/style.css">
+    <main><h4><a href=/index.html>Back Home...</a></h4></main>
+</head>
+
+<body>
+    <main>
+        <h2>My work on OpenBurn</h2>
+        <p>
+            <a href=https://github.com/tuxxi/OpenBurn-old>
+            <i class="fa fa-github" aria-hidden="true"></i>OpenBurn on GitHub
+            </a>
+        </p>
+        <br>
+        <h3> Beginnings </h3>
+        <p>
+            OpenBurn was my attempt to create an free and open-source version of <a href=https://burnsim.com>BurnSim</a>,
+            a solid rocket motor simulation and design program primarily serving the amateur rocketry community.
+            <br>
+            I had used BurnSim extensively in the past to design solid rocket motors - but I has many grievances with it, mainly in the usability and aesthetics of the program.
+            <br>
+            In some ways the secondary motivating goal was that of community: I envisioned a future where anyone could inspect the code, add features, and fix bugs, engaging the entire community. Finally, as a poor (read: cheap) student I didn't want to pay for a BurnSim licence...
+            <br>
+            <em>(Author's Note: As of 2021, BurnSim is now free for students to use)</em>
+        </p>
+        <p>
+            At the time I started the project (around mid 2017), the only other large codebase I had worked on was <a href=./momentum.html>Momentum Mod</a>, written in good-ol-C++98.
+            Naturally I chose to write OpenBurn in C++, utilizing the <a href=https://www.qt.io/product/framework>Qt framework.</a>
+        </p>
+        <p>
+            The Qt framework is exceptional, with best-in-class documentation, great support for all major desktop platforms, and feature-full widgets and extensions.
+            <br>
+            However, the choice to write the application in C++ ended up biting me as the application grew in scope.
+            C++ is quite a difficult language to use correctly, and as a young developer I was keen to use the coolest and newest features as fast as I could. This meant that the code grew outwardly like a spaghetti monster, each new module written in a slightly different (read: "more modern and therefore more better") style, and most of it not written very well.
+        </p>
+        <br>
+        <h3> Learning... </h3>
+        <p>
+            Despite the slow progress, this project was enormously instructive, being one of the first major pieces of code I ever wrote from scratch.
+            Just about every mistake you can make with C++, I did. I learned about CMake, compiler tools, "modern" C++11/14 (and the then-burgeoning C++17), MVC architecture, OO design patterns, and on.
+            <br>
+            Looking back I have absolutely no idea how I even got started, given how little I knew at the beginning.
+            I recall painfully mucking about until <em>something</em> worked, then reading documentation and books for hours afterwards to try to understand how to do it better.
+            <br>
+            This approach really doesn't work for everyone, but for me the experience was transformative. To this day when young developers ask for advice I will always recommend "just diving in".
+            The worst thing to do is to never start, the second worst is giving up.
+        </p>
+        <p>
+            The other big accomplishment from this time was learning to read and digest technical research papers.
+            When first starting I really had absolutely no idea how one would go about modeling a solid rocket motor burning.
+            Reading <em><a href=https://www.wiley.com/en-us/Rocket+Propulsion+Elements%2C+9th+Edition-p-9781118753651>Rocket Propulsion Elements</a></em> by Sutton was a good first step.
+            However the basic "steady state" model was not enough, and soon I wanted to model non-deal nozzle flow behavior, erosive burning, startup transients, and more.
+            Digging into and reading all the papers I could find on this topic (many from the mid-1960s) was again one of the best teachers I could ask for.
+        </p>
+        <br>
+        <h3> Release </h3>
+        <p>
+            Eventually my labor of love paid off, and I "released" verion 0.1 of OpenBurn in late 2017 to a small group of friends in the amateur rocketry community.
+            The "MVP" release allowed for simulation of the solid-state burn phase of a solid rocket motor with arbitrary propellants.
+            I was proud of the graphics I had created to animate the simulated motor "burning", and even added features commonly requested by users of BurnSim, such as calculating the mass flux (the amount of mass flow per unit area) at any point in the thrust chamber.
+        </p>
+        <br>
+        <img src="https://camo.githubusercontent.com/0c8a3d04c40cecde4a1cb33504325a0c36a9af7d/68747470733a2f2f692e696d6775722e636f6d2f393632535052412e706e67"
+        alt="OpenBurn simulation screenshot">
+        <br>
+        <h3> Endings </h3>
+        <p>
+            After "release", I began working on adding new requested features such as more grain types.
+            However, at this point the bad architecture began to really catch up with me.
+            It was monumentally difficult to add new grain types as it required overloading countless classes for drawing the grain and simulating the grain.
+            I was also having a hard time finding closed-form simulation equations for common propellant grain types such as a fin-o-cyl. At this point I even went as far as reverse engineering BurnSim to
+            understand the algorithms Greg had used to simulate complex grain shapes, but to no ultimate avail.
+        </p>
+        <p>
+            Earlier on this page, I said:
+        </p>
+        <blockquote>
+            <p>The second worst thing you can do is give up.</p>
+        </blockquote>
+
+        <p>
+            This was the hardest lesson of all to learn. Sometimes, you just don't have it in you anymore.
+            As I began to take school more seriously I didn't have a lot of time left for rocketry, and my enthusiasm to keep hacking on this code began to wane.
+            I'm still very proud of all the things I learned and accomplished in the ~6 months I spent working on OpenBurn, but I don't regret focusing on other things.
+        </p>
+        <h3> Epilogue </h3>
+        <p>
+            One of the biggest goals of this project was ultimately to make amateur rocketry more accessible, and to foster an open-source, collaborative attitude.
+            These goals, and more, were achieved when <a href=http://reilley.net/>Andrew Reilley</a> released <a href=https://github.com/reilleya/openMotor>openMotor</a> - a program with the same goals and philosophy as OpenBurn, but generally better in (almost ;) every way.
+        </p>
+        <p>
+            I did spend a few weeks hacking on Andrew's code and added a few small features such as the non-ideal nozzle simulation mentioned above.
+            In the end, the amateur rocketry community now has a free, open-source, hackable simulation tool to play around with. Isn't that what I wanted?
+        </p>
+    </main>
+</body>
+</html>

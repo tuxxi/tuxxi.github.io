@@ -130,6 +130,12 @@ blockquote {
   margin-right: 0;
 }
 
+blockquote p {
+    padding: 15px;
+    background: #eee;
+    border-radius: 5px;
+}
+
 blockquote p:before {
   content: '“';
   font-size: 1.25em;
